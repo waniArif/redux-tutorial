@@ -1,0 +1,4 @@
+const DECREASE = "DECREASE";
+const INCREASE = "INCREASE";
+const RESET = "RESET";
+const CHANGE_NAME = "CHANGE_NAME";

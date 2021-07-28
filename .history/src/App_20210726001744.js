@@ -7,8 +7,6 @@ import cartItems from "./cart-items";
 // redux stuff
 
 import { createStore } from "redux";
-import { DECREASE, INCREASE } from "./actions";
-import reducer from "./reducer";
 
 // dispatch method - sends actions to the store
 // actions (objects) must have type property - what kind of an action
@@ -16,16 +14,31 @@ import reducer from "./reducer";
 
 // initial store
 const initialStore = {
-  count: 0,
-  name: "Arif",
+  count: 78,
 };
 
+// store.getState()
+
+// reducer
+const reducer = (state, action) => {
+  // state is old state, action is what to do, or what the user is doing
+
+  if (action.type === "DECREASE") {
+    return { count: state.count - 1 };
+  }
+  if (action.type === "INCREASE") {
+    return { count: state.count + 1 };
+  }
+  if (action.type === "RESET") {
+    return { count: 0 };
+  }
+  console.log(state, action);
+  return state;
+};
 const store = createStore(reducer, initialStore);
-store.dispatch({ type: DECREASE });
-store.dispatch({ type: INCREASE });
-store.dispatch({ type: INCREASE });
-store.dispatch({ type: INCREASE });
-store.dispatch({ type: INCREASE });
+store.dispatch({ type: "DECREASE" });
+store.dispatch({ type: "INCREASE" });
+store.dispatch({ type: "RESET" });
 
 function App() {
   // cart setup

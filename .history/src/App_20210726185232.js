@@ -20,6 +20,10 @@ const initialStore = {
   name: "Arif",
 };
 
+// store.getState()
+
+// reducer
+
 const store = createStore(reducer, initialStore);
 store.dispatch({ type: DECREASE });
 store.dispatch({ type: INCREASE });
