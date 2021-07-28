@@ -38,10 +38,10 @@ const CartContainer = ({ cart = [], total }) => {
     </section>
   );
 };
-function mapStateToProps({ total, cart }) {
+function mapStateToProps(store) {
   return {
-    total,
-    cart,
+    total: store.total,
+    cart: store.cart,
   };
 }
 export default connect(mapStateToProps)(CartContainer);

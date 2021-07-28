@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-const Navbar = ({ count }) => {
+const Navbar = ({ cart }) => {
+  const { count } = cart;
   return (
     <nav>
       <div className="nav-center">

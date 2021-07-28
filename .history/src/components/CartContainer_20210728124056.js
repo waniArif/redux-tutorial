@@ -30,7 +30,7 @@ const CartContainer = ({ cart = [], total }) => {
         <hr />
         <div className="cart-total">
           <h4>
-            total <span>${total}</span>
+            total <span>$0.00</span>
           </h4>
         </div>
         <button className="btn clear-btn">clear cart</button>
@@ -38,10 +38,10 @@ const CartContainer = ({ cart = [], total }) => {
     </section>
   );
 };
-function mapStateToProps({ total, cart }) {
+function mapStateToProps(store) {
   return {
-    total,
-    cart,
+    total: store.total,
+    cart: store.cart,
   };
 }
 export default connect(mapStateToProps)(CartContainer);
