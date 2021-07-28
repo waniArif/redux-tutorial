@@ -44,7 +44,7 @@ const CartContainer = ({ cart = [], total, dispatch }) => {
     </section>
   );
 };
-function mapStateToProps({ total, cart }) {
+function mapStateToProps({ total, cart }, dispatch) {
   return {
     total,
     cart,

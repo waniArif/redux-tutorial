@@ -12,10 +12,10 @@ const reducer = (state, action) => {
       return { ...state, cart: [] };
 
     default:
-      return state;
+      break;
   }
 
-  // return state;
+  return state;
 };
 
 export default reducer;
